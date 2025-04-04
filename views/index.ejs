@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MikroTik API Interface</title>
+</head>
+<body>
+  <h1>MikroTik API Interface</h1>
+  <form method="POST" action="/send-command">
+    <label for="ip">MikroTik IP Address:</label>
+    <input type="text" id="ip" name="ip" value="192.168.22.1" required><br><br>
+    
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" value="admin" required><br><br>
+    
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" value="2" required><br><br>
+    
+
+    <label for="command">Command:</label>
+    <input type="text" id="command" name="command" placeholder="/ip/address/print" required><br><br>
+
+    <button type="submit">Send Command</button>
+  </form>
+
+  <h2>Result:</h2>
+  <pre><%= result ? result : 'No result yet' %></pre>
+
+  <h2>Error:</h2>
+  <pre><%= error ? error : 'No error' %></pre>
+</body>
+</html>
